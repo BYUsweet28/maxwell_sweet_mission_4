@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+@model mission4_sweet28.Models.CalculatorModel;
+<!-- Calculator-->
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <!-- The grade caluclator form. The functionality for this form is in the script.js file-->
+        <h2 class="mb-5">Grade Calculator</h2>
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <p>Insert your scores for the following grade categories. Please enter a number between 0 and 100 for eah field.</p>
+                <!-- Form holding all of the user's grade inputs -->
+                <form method="post">
+                    <label for="assignments" id="assignmentsLabel" class="col-form-label">Assignments: </label>
+                    <input id="assignments" asp-for="assignments" />
+                    <br />
+                    <br />
+                    <label for="groupProject" id="groupProjectLabel">Group Project: </label>
+                    <input id="groupProject" asp-for="groupProject" />
+                    <br />
+                    <br />
+                    <label for="quizzes" id="quizzesLabel">Quizzes: </label>
+                    <input id="quizzes" asp-for="quizzes" />
+                    <br />
+                    <br />
+                    <label for="midterm" id="midtermLabel">Midterm Exam: </label>
+                    <input id="midterm" asp-for="midterm" />
+                    <br />
+                    <br />
+                    <label for="final" id="finalLabel">Final Exam: </label>
+                    <input id="final" asp-for="final" />
+                    <br />
+                    <br />
+                    <label for="intex" id="intexLabel">INTEX</label>
+                    <input id="intex" asp-for="intex" />
+                    <br />
+                    <br />
+                    <!-- The class I put on this button is custom CSS that I did in the styles.css page. -->
+                    <input type="submit" id="gradeSubmit" class="gradeButton" name="gradeSubmit" value="Calculate Score" />
+                </form>
+                <br />
+                <!-- These tags are dynamically filled in by the javascript function in the scripts,js file.-->
+                <h6 id="finalGrade"></h6>
+                <p id="finalPct"></p>
+                <p id="LetterGrade"></p>
+            </div>
+        </div>
+    </div>
+    <div asp-validation-summary="All">
+
+    </div>
+</section>
